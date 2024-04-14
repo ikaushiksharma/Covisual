@@ -1,11 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { SignIn, UserButton } from "@clerk/nextjs";
-import Image from "next/image";
+const DashboardPage = () => {
+  return <div>Dashboard Page</div>;
+};
 
-export default function Home() {
-  return (
-    <main>
-      <p>Dashboard Main View</p>
-    </main>
-  );
-}
+export default DashboardPage;

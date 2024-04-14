@@ -1,41 +1,20 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import {
-  OrganizationProfile,
-  OrganizationSwitcher,
-  UserButton,
-  useOrganization,
-} from "@clerk/nextjs";
-import { Dialog } from "@radix-ui/react-dialog";
-import { Plus, Search } from "lucide-react";
-import React, { useState } from "react";
-const InviteButton = () => {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant={"outline"}>
-          <Plus className="h-4 w-4 mr-2" />
-          Invite members
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="max-w-fit border-none bg-transparent p-0">
-        <OrganizationProfile />
-      </DialogContent>
-    </Dialog>
-  );
-};
-const NavBar = () => {
+
+import { OrganizationSwitcher, UserButton, useOrganization } from "@clerk/nextjs";
+
+import { InviteButton } from "./invite-button";
+import { SearchInput } from "./search-input";
+
+export const Navbar = () => {
   const { organization } = useOrganization();
+
   return (
-    <div className="w-full flex items-center gap-x-4 p-5 ">
+    <div className="flex items-center gap-x-4 p-5">
       <div className="hidden lg:flex lg:flex-1">
-        <div className="w-[510px] border border-[#eeeeee] gap-1 p-3 bg-white rounded-md flex items-center">
-          <Search className=" opacity-70" />
-          <input type="text" className=" outline-none w-full" placeholder="search boards" />
-        </div>
+        <SearchInput />
       </div>
-      <div className="block flex-1 lg:hidden">
+
+      <div className="block lg:hidden flex-1">
         <OrganizationSwitcher
           hidePersonal
           appearance={{
@@ -51,7 +30,7 @@ const NavBar = () => {
                 padding: "6px",
                 width: "100%",
                 borderRadius: "8px",
-                border: "1px solid #e5e7eb",
+                border: "1px solid #E5E7EB",
                 justifyContent: "space-between",
                 backgroundColor: "white",
               },
@@ -59,10 +38,9 @@ const NavBar = () => {
           }}
         />
       </div>
+
       {organization && <InviteButton />}
       <UserButton />
     </div>
   );
 };
-
-export default NavBar;

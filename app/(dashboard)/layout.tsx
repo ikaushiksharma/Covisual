@@ -1,24 +1,26 @@
-import NavBar from "./_components/NavBar";
-import OrgSideBar from "./_components/sidebar/OrgSideBar";
-import SideBar from "./_components/sidebar/SideBar";
+import type { PropsWithChildren } from "react";
 
-interface Props {
-  children: React.ReactNode;
-}
-const DashboardLayout = ({ children }: Props) => {
+import { Navbar } from "./_components/navbar";
+import { OrgSidebar } from "./_components/org-sidebar";
+import { Sidebar } from "./_components/sidebar";
+
+const DashboardLayout = ({ children }: PropsWithChildren) => {
   return (
-    <div className="flex h-screen">
-      <SideBar />
-      <div className="w-full pl-[60px] h-full">
-        <div className=" w-full flex gap-x-3 h-full">
-          <OrgSideBar />
+    <main className="h-full">
+      <Sidebar />
+
+      <div className="pl-[60px] h-full">
+        <div className="flex gap-x-3 h-full">
+          <OrgSidebar />
           <div className="h-full flex-1">
-            <NavBar />
+            <Navbar />
+
             {children}
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
+
 export default DashboardLayout;

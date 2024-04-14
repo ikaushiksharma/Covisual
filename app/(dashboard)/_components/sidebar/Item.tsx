@@ -1,42 +1,43 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+
 import { useOrganization, useOrganizationList } from "@clerk/nextjs";
+import Image from "next/image";
+
+import { Hint } from "@/components/hint";
 import { cn } from "@/lib/utils";
 
-interface ItemProps {
+type ItemProps = {
   id: string;
   name: string;
   imageUrl: string;
-}
-const Item = ({ id, name, imageUrl }: ItemProps) => {
+};
+
+export const Item = ({ id, name, imageUrl }: ItemProps) => {
   const { organization } = useOrganization();
-  const { setActive } = useOrganizationList() as any;
+  const { setActive } = useOrganizationList();
+
   const isActive = organization?.id === id;
+
   const onClick = () => {
-    if (isActive) return;
+    if (!setActive) return;
+
     setActive({ organization: id });
   };
+
   return (
-    <div className=" h-[50px] w-[50px]">
-      <img
-        src={imageUrl}
-        alt={name}
-        key={id}
-        onClick={onClick}
-        className={cn(
-          "rounded-md",
-          "cursor-pointer",
-          "h-full",
-          "w-full",
-          "object-cover",
-          "opacity-60",
-          "hover:opacity-100",
-          "transition",
-          isActive && "opacity-100",
-        )}
-      />
+    <div className="aspect-square relative">
+      <Hint label={name} side="right" align="start" sideOffset={18}>
+        <Image
+          src={imageUrl}
+          alt={name}
+          onClick={onClick}
+          className={cn(
+            "rounded-md cursor-pointer opacity-75 hover:opacity-100 transition",
+            isActive && "opacity-100"
+          )}
+          fill
+        />
+      </Hint>
     </div>
   );
 };
-
-export default Item;
