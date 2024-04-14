@@ -319,6 +319,28 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@liveblocks/client@1.11.1", "@liveblocks/client@^1.11.1":
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@liveblocks/client/-/client-1.11.1.tgz#4a7d95d819fa6125559545916573dd09d9cfb84e"
+  integrity sha512-+94LplyUElOZpKECX/rF1UJmkU9WRj3S1aD9w6iOYIitT1RFW+9Z4Et7nxO43FUODaheR1a40iqyikfDcRXswA==
+  dependencies:
+    "@liveblocks/core" "1.11.1"
+
+"@liveblocks/core@1.11.1":
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@liveblocks/core/-/core-1.11.1.tgz#926fbc65edd3a52555c27f49c18ff0a5d74b66ad"
+  integrity sha512-QkrONvIkVBGqZynrgGTF4jI4oFcui4+0Vf8QYdvvdtqXG6t6mcryDic1Rq53tuKsPzOXP1Nb7XSW3LH1z8ERxQ==
+
+"@liveblocks/react@^1.11.1":
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@liveblocks/react/-/react-1.11.1.tgz#469483cd6bac457ebbb22979645ab3a089e4d592"
+  integrity sha512-8ut0ONis8XOZEkNoVMZ1zOs34jja1aciPBBrqeV+KQYTYjgbcKXdpc2QyRIl3E6FOTPq2lgf0mpDQMtTU0n2eQ==
+  dependencies:
+    "@liveblocks/client" "1.11.1"
+    "@liveblocks/core" "1.11.1"
+    nanoid "^3"
+    use-sync-external-store "^1.2.0"
+
 "@next/env@14.1.0":
   version "14.1.0"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.1.0.tgz#43d92ebb53bc0ae43dcc64fb4d418f8f17d7a341"
@@ -2705,7 +2727,7 @@ mz@^2.7.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-nanoid@^3.3.6, nanoid@^3.3.7:
+nanoid@^3, nanoid@^3.3.6, nanoid@^3.3.7:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.7.tgz#d0c301a691bc8d54efa0a2226ccf3fe2fd656bd8"
   integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
