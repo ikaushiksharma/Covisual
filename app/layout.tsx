@@ -27,7 +27,7 @@ export default function RootLayout({
           <ModalProvider />
 
           {children}
-        </ConvexClientProvider>{" "}
+        </ConvexClientProvider>
       </body>
     </html>
   );

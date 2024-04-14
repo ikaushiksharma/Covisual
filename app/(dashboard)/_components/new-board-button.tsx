@@ -39,7 +39,6 @@ export const NewBoardButton = ({ orgId, disabled }: NewBoardButtonProps) => {
         pending || disabled ? "opacity-75 cursor-not-allowed" : "hover:bg-blue-800",
       )}
     >
-      {" "}
       <div aria-hidden />
       <Plus className="h-12 w-12 text-white stroke-1" />
       <p className="text-sm text-white font-light">New board</p>
