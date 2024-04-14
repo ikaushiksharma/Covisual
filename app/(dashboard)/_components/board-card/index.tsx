@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import { Footer } from "./footer";
 import { Overlay } from "./overlay";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type BoardCardProps = {
   id: string;
@@ -54,5 +55,13 @@ export const BoardCard = ({
         />
       </div>
     </Link>
+  );
+};
+
+BoardCard.Skeleton = function BoardCardSkeleton() {
+  return (
+    <div className="aspect-[100/127] rounded-lg flex overflow-hidden">
+      <Skeleton className="h-full w-full" />
+    </div>
   );
 };
