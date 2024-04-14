@@ -9,7 +9,7 @@ import { useApiMutation } from "@/hooks/use-api-mutation";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
-export const EmptyBoards = () => {
+const EmptyBoards = () => {
   const router = useRouter();
   const { mutate, pending } = useApiMutation(api.board.create);
   const { organization } = useOrganization();
@@ -43,3 +43,5 @@ export const EmptyBoards = () => {
     </div>
   );
 };
+
+export default EmptyBoards;

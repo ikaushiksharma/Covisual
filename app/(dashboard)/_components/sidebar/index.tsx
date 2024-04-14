@@ -1,4 +1,4 @@
-import { List } from "./list";
+import List from "./list";
 import { NewButton } from "./new-button";
 
 export const Sidebar = () => {

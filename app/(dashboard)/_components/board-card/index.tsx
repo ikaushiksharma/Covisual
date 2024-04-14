@@ -25,7 +25,7 @@ type BoardCardProps = {
   isFavourite: boolean;
 };
 
-export const BoardCard = ({
+const BoardCard = ({
   id,
   title,
   imageUrl,
@@ -85,3 +85,5 @@ BoardCard.Skeleton = function BoardCardSkeleton() {
     </div>
   );
 };
+
+export default BoardCard;

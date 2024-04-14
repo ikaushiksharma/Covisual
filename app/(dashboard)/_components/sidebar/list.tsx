@@ -1,10 +1,8 @@
 "use client";
-
 import { useOrganizationList } from "@clerk/nextjs";
-
 import Item from "./item";
 
-export const List = () => {
+const List = () => {
   const { userMemberships } = useOrganizationList({
     userMemberships: {
       infinite: true,
@@ -26,3 +24,5 @@ export const List = () => {
     </ul>
   );
 };
+
+export default List;
