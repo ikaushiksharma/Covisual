@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      <p>dahsboard main</p>
+      <p>Dashboard Main View</p>
     </main>
   );
 }
