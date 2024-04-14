@@ -12,7 +12,7 @@ type ItemProps = {
   imageUrl: string;
 };
 
-export const Item = ({ id, name, imageUrl }: ItemProps) => {
+const Item = ({ id, name, imageUrl }: ItemProps) => {
   const { organization } = useOrganization();
   const { setActive } = useOrganizationList();
 
@@ -33,7 +33,7 @@ export const Item = ({ id, name, imageUrl }: ItemProps) => {
           onClick={onClick}
           className={cn(
             "rounded-md cursor-pointer opacity-75 hover:opacity-100 transition",
-            isActive && "opacity-100"
+            isActive && "opacity-100",
           )}
           fill
         />
@@ -41,3 +41,5 @@ export const Item = ({ id, name, imageUrl }: ItemProps) => {
     </div>
   );
 };
+
+export default Item;

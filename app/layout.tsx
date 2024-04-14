@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
 
-import { Loading } from "@/components/auth/loading";
+import Loading  from "@/components/auth/loading";
 import ConvexClientProvider from "@/providers/convex-client-provider";
 
 import "./globals.css";

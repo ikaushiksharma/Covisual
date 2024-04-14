@@ -5,7 +5,7 @@ import { OrganizationSwitcher, UserButton, useOrganization } from "@clerk/nextjs
 import { InviteButton } from "./invite-button";
 import { SearchInput } from "./search-input";
 
-export const Navbar = () => {
+const Navbar = () => {
   const { organization } = useOrganization();
 
   return (
@@ -44,3 +44,5 @@ export const Navbar = () => {
     </div>
   );
 };
+
+export default Navbar;
